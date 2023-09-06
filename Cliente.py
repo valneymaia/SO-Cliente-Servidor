@@ -4,18 +4,18 @@ import socket
 def main():
     host = '127.3.2.1'
     porta = 8080
-
+    #conectar ao serce
     cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     cliente.connect((host, porta))
-
+    #loop 
     while True:
-        comando = input("Digite 'd' para Data, 'h' para Hora, 'dh' para Data e Hora, ou 'sair' para sair: ")
+        comando = input("Digite qual opcao voce deseja ver :  'd' para Data,  'h' para Hora, 'dh' para Data e Hora, ou 'sair' para sair: ")
         if comando == 'sair':
             break
         cliente.send(comando.encode('utf-8'))
         resposta = cliente.recv(1024).decode('utf-8')
         print("Resposta do servidor:", resposta)
-        print("----------------")
+        print("-------------------------------------")
 
     cliente.close()
 

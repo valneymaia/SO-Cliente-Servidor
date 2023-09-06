@@ -43,5 +43,6 @@ def iniciar():
         print(f"[CONEXÕES ATIVAS] {threading.activeCount() - 1}")
 
 if __name__ == '__main__':
-    print("[INICIANDO] Servidor está iniciando...")
+    print("[INICIANDO] Servidor está iniciando")
+    print("...")
     iniciar()
